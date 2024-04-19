@@ -18,6 +18,11 @@ jobs:
         with:
           node-version: 16.13
 
+      - name: Set up environment variables
+        env:
+          DATABASE_URL: postgresql://prisma:prisma@localhost:5432/prisma-db
+        run: echo "DATABASE_URL=$DATABASE_URL" >> $GITHUB_ENV
+
       - name: Install dependencies
         run: npm ci
 
