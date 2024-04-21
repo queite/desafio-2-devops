@@ -1,4 +1,4 @@
-name: Run E2E Tests
+name: Run Unit Tests
 
 on:
   pull_request:
@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  e2e-tests:
+  unit-tests:
     runs-on: ubuntu-latest
 
     steps:
@@ -27,12 +27,12 @@ jobs:
       - name: Wait for services to start
         run: sleep 10
 
-      - name: Run E2E tests
+      - name: Run unit tests
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
           NODE_ENV: ${{ secrets.NODE_ENV }}
           JWT_SECRET: ${{ secrets.JWT_SECRET }}
-        run: npm run test:e2e
+        run: npm run test
 
       - name: Stop Docker Compose services
         run: docker-compose down
