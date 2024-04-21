@@ -32,7 +32,6 @@ jobs:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
           NODE_ENV: ${{ secrets.NODE_ENV }}
           JWT_SECRET: ${{ secrets.JWT_SECRET }}
-      DB_URL:
         run: npm run test:e2e
 
       - name: Stop Docker Compose services
