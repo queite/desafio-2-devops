@@ -25,11 +25,14 @@ jobs:
         run: docker-compose up -d
 
       - name: Wait for services to start
-        run: sleep 10
+        run: sleep 20
 
       - name: Run E2E tests
         env:
-          DATABASE_URL: postgresql://prisma:prisma@localhost:5432/prisma-db
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          NODE_ENV: ${{ secrets.NODE_ENV }}
+          JWT_SECRET: ${{ secrets.JWT_SECRET }}
+      DB_URL:
         run: npm run test:e2e
 
       - name: Stop Docker Compose services
