@@ -16,14 +16,3 @@ jobs:
 
       - name: Build project
         run: npm run build
-
-      - name: Deploy to Render
-        uses: Render/deploy@v1
-        with:
-          api-key: ${{ secrets.RENDER_API_KEY }}
-          app-id: ${{ secrets.RENDER_APP_ID }}
-          environment:
-            NODE_ENV: ${{ secrets.NODE_ENV }}
-            JWT_SECRET: ${{ secrets.JWT_SECRET }}
-            DATABASE_URL: ${{ secrets.DATABASE_URL }}
-#test
