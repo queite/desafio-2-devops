@@ -17,9 +17,9 @@ jobs:
 
       # - name: Build project
       #   run: npm run build
-
-      - name: Deploy to Render
-        uses: JorgeLNJunior/render-deploy@v1.4.4
+      - name: Deploy to production
+        uses: johnbeynon/render-deploy-action@v0.0.8
         with:
           api_key: ${{ secrets.RENDER_API_KEY }}
           service_id: ${{ secrets.RENDER_APP_ID }}
+          wait-for-success: true
