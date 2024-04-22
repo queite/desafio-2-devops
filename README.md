@@ -40,10 +40,10 @@ Visto que o schema fornecido na API é do Prisma foi utilizada a imagem do Postg
   </summary>
 
   Para o pipeline de teste end to end foi utilizado workflow do GitHub Actions.<br>
-  Criado o seguinte arquivo `run-e2e-tests.yml` no caminho `.github/workflows`.
+  Criado o arquivo `run-e2e-tests.yml` no caminho `.github/workflows`.
 
   ```
-  name: Run E2E Tests
+name: Run E2E Tests
 
 on:
   pull_request:
@@ -94,7 +94,7 @@ Este workflow utiliza o GitHub Actions para, quando aberto Pull Request na branc
 
 <details>
   <summary>
-    <b>Pipeline de teste unitario</b>
+    <b>Pipeline de teste unitário</b>
   </summary>
 
   Para o pipeline de testes unitários foi utilizado workflow do GitHub Actions.<br>
@@ -142,7 +142,7 @@ jobs:
   O deploy foi realizado pelo [Render](https://render.com/).<br>
   Workflow do GitHub Actions
   ```
-  name: Deploy to Render
+name: Deploy to Render
 
 on:
   push:
